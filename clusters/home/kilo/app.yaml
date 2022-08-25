@@ -3,6 +3,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: foo-app
+  namespace: default
   labels:
     app: foo
 spec:
@@ -16,6 +17,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: foo-service
+  namespace: default
 spec:
   selector:
     app: foo
@@ -27,6 +29,7 @@ kind: Pod
 apiVersion: v1
 metadata:
   name: bar-app
+  namespace: default
   labels:
     app: bar
 spec:
@@ -40,6 +43,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: bar-service
+  namespace: default
 spec:
   selector:
     app: bar
@@ -51,6 +55,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: example-ingress
+  namespace: default
 spec:
   rules:
   - http:
